@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   TextInput, Pressable, StyleSheet, Text,
-  ScrollView, KeyboardAvoidingView, Platform
+  ScrollView, KeyboardAvoidingView, Platform, Alert
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
@@ -11,19 +11,26 @@ import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-export default function LoginScreen() {
+export default function RegisterScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const { language, setLanguage, t } = useLanguage();
-
-  const handleLogin = () => {
-    // TODO: hook up real auth later
-    console.log('Login pressed', { email, password });
-    router.replace('/');
-  };
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'es' : 'en');
+  };
+
+  const handleRegister = () => {
+    if (password !== confirmPassword) {
+      Alert.alert(
+        language === 'en' ? 'Passwords do not match' : 'Las contraseñas no coinciden'
+      );
+      return;
+    }
+    // TODO: hook up real registration later
+    console.log('Register pressed', { email, password });
+    router.replace('/');
   };
 
   return (
@@ -48,7 +55,7 @@ export default function LoginScreen() {
                 {t('appTitle')}
               </Text>
               <ThemedText type="small" style={styles.subtitle}>
-                {t('tagline')}
+                {t('createAccount')}
               </ThemedText>
 
               <TextInput
@@ -69,18 +76,21 @@ export default function LoginScreen() {
                 secureTextEntry
               />
 
-              <Pressable style={styles.button} onPress={handleLogin}>
-                <ThemedText style={styles.buttonText}>{t('login')}</ThemedText>
+              <TextInput
+                placeholder={t('confirmPassword')}
+                placeholderTextColor="#888888"
+                style={styles.input}
+                onChangeText={setConfirmPassword}
+                value={confirmPassword}
+                secureTextEntry
+              />
+
+              <Pressable style={styles.button} onPress={handleRegister}>
+                <ThemedText style={styles.buttonText}>{t('register')}</ThemedText>
               </Pressable>
 
-              <Pressable onPress={() => router.push('/register')}>
-                <ThemedText style={styles.linkText}>{t('createAccount')}</ThemedText>
-              </Pressable>
-
-              <Pressable onPress={() => console.log('Forgot password pressed')}>
-                <ThemedText type="small" style={styles.forgotText}>
-                  {t('forgotPassword')}
-                </ThemedText>
+              <Pressable onPress={() => router.replace('/')}>
+                <ThemedText style={styles.linkText}>{t('alreadyHaveAccount')}</ThemedText>
               </Pressable>
             </ThemedView>
           </ScrollView>
@@ -94,10 +104,10 @@ const styles = StyleSheet.create({
   mainContainer: { flex: 1 },
   safeArea: { flex: 1 },
   scrollContainer: { flexGrow: 1, justifyContent: 'center' },
-  container: {padding: Spacing.four, width: '100%' },
-  title: { 
+  container: { padding: Spacing.four, width: '100%' },
+  title: {
     color: '#C9BE9C',
-    textAlign: 'center', 
+    textAlign: 'center',
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 8,
@@ -130,11 +140,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingTop: 15,
     fontSize: 20,
-  },
-  forgotText: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    paddingTop: 8,
   },
   langToggle: {
     alignSelf: 'flex-end',
