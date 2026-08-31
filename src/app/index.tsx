@@ -17,9 +17,8 @@ export default function LoginScreen() {
   const { language, setLanguage, t } = useLanguage();
 
   const handleLogin = () => {
-    // TODO: hook up real auth later
     console.log('Login pressed', { email, password });
-    router.replace('/');
+    router.replace('/(tabs)/home');
   };
 
   const toggleLanguage = () => {
