@@ -14,7 +14,7 @@ export const translations = {
     forgotPassword: 'Forgot Password',
     //homepage
     homeTab: 'Home',
-    profileTab: 'Profile',
+    settingsTab: 'Settings',
     herdSummary: 'Herd Summary',
     totalAnimals: 'Total Animals',
     activeOnFarm: 'Active on Farm',
@@ -36,8 +36,15 @@ export const translations = {
     viewFullHistory: 'View Full History',
     minAgo: 'min ago',
     years: 'years',
+    //camera
+    cameraPermissionMessage: 'We need camera access to take photos and scan tags.',
+    grantPermission: 'Grant Permission',
+    alignQrCode: 'Align QR code within frame',
+    cancel: 'Cancel',
+    //settings
+    comingSoon: 'Coming soon',
   },
-  
+
   es: {
     appTitle: 'VAQUERO',
     tagline: 'Carne boliviana sostenible, trazada desde el origen.',
@@ -51,7 +58,7 @@ export const translations = {
     forgotPassword: 'Olvidé mi contraseña',
     //Homepage
     homeTab: 'Inicio',
-    profileTab: 'Perfil',
+    settingsTab: 'Configuración',
     herdSummary: 'Resumen del Rebaño',
     totalAnimals: 'Animales Totales',
     activeOnFarm: 'Activos en Finca',
@@ -73,6 +80,13 @@ export const translations = {
     viewFullHistory: 'Ver Historial Completo',
     minAgo: 'hace min',
     years: 'años',
+    // camera
+    cameraPermissionMessage: 'Necesitamos acceso a la cámara para tomar fotos y escanear etiquetas.',
+    grantPermission: 'Otorgar Permiso',
+    alignQrCode: 'Alinea el código QR dentro del marco',
+    cancel: 'Cancelar',
+    //settings
+    comingSoon: 'Próximamente',
   },
 } as const;
 

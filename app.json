@@ -33,6 +33,12 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permite que VAQUERO acceda a tu cámara para fotografiar e identificar el ganado."
+        }
       ]
     ],
     "experiments": {
