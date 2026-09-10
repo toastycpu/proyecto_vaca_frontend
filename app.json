@@ -39,6 +39,12 @@
         {
           "cameraPermission": "Permite que VAQUERO acceda a tu cámara para fotografiar e identificar el ganado."
         }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permite que VAQUERO acceda a tus fotos para agregarlas al registro del animal."
+        }
       ]
     ],
     "experiments": {
