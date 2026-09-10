@@ -43,6 +43,10 @@ export const translations = {
     cancel: 'Cancel',
     //settings
     comingSoon: 'Coming soon',
+    //tabs
+    recordTab: 'Record',
+    vaqueroTab: 'Vaquero',
+    progressTab: 'Progress',
   },
 
   es: {
@@ -87,6 +91,10 @@ export const translations = {
     cancel: 'Cancelar',
     //settings
     comingSoon: 'Próximamente',
+    //tabs
+    recordTab: 'Record',
+    vaqueroTab: 'Vaquero',
+    progressTab: 'Progreso',
   },
 } as const;
 

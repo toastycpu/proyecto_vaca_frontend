@@ -1,19 +1,21 @@
 import { Tabs } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useTheme } from '@/hooks/use-theme';
 
 export default function TabsLayout() {
   const { t } = useLanguage();
+  const theme = useTheme();
 
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#C9BE9C',
-        tabBarInactiveTintColor: '#8A9A94',
+        tabBarActiveTintColor: theme.title,
+        tabBarInactiveTintColor: theme.textSecondary,
         tabBarStyle: {
-          backgroundColor: '#0F2A2D',
-          borderTopColor: '#1C3F3D',
+          backgroundColor: theme.background,
+          borderTopColor: theme.cardBorder,
         },
       }}
     >
@@ -23,6 +25,33 @@ export default function TabsLayout() {
           title: t('homeTab'),
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="record"
+        options={{
+          title: t('recordTab'),
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="add-circle" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="vaquero"
+        options={{
+          title: t('vaqueroTab'),
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="cow" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="progress"
+        options={{
+          title: t('progressTab'),
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ribbon" size={size} color={color} />
           ),
         }}
       />
