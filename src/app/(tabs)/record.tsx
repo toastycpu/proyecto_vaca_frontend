@@ -52,7 +52,7 @@ export default function RecordIdentifyScreen() {
               icon={<Ionicons name="list" size={20} color={method === 'list' ? theme.buttonText : theme.text} />}
               label={t('animalList')}
               active={method === 'list'}
-              onPress={() => router.push('/catalog-lookup' as any)}
+              onPress={() => router.push('/catalog-lookup')}
               theme={theme}
             />
             <MethodButton
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 30,
+    marginBottom: 10,
   },
   numpadText: { fontSize: 22, fontWeight: 'bold' },
 });
