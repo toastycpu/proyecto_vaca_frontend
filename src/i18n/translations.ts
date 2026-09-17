@@ -66,6 +66,9 @@ export const translations = {
     date: 'Date',
     save: 'Save',
     savedOffline: 'Saved (offline, will sync later)',
+    //settings page
+    language: 'Language', fontSize: 'Font Size', fontNormal: 'Normal', fontLarge: 'Large', fontXLarge: 'Extra Large',
+    highContrast: 'High Contrast', readingAssist: 'Reading Assist', largeButtons: 'Large Buttons',
   },
 
   es: {
@@ -133,6 +136,9 @@ export const translations = {
     date: 'Fecha',
     save: 'Guardar',
     savedOffline: 'Guardado (sin señal, se subirá después)',
+    //settings page
+    language: 'Idioma', fontSize: 'Tamaño de Letra', fontNormal: 'Normal', fontLarge: 'Grande', fontXLarge: 'Muy Grande',
+    highContrast: 'Alto Contraste', readingAssist: 'Asistencia de Lectura', largeButtons: 'Botones Grandes',  
   },
 } as const;
 
