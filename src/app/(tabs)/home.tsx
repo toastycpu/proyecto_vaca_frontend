@@ -35,23 +35,14 @@ const timeline = [
 ];
 
 export default function HomeScreen() {
-  const { t, language, setLanguage } = useLanguage();
+  const { t } = useLanguage();
   const theme = useTheme();
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
-  };
 
   return (
     <ThemedView style={styles.mainContainer}>
       <SafeAreaView style={{ flex: 1 }}>
         <ScrollView contentContainerStyle={styles.scrollContainer}>
-          <Pressable style={styles.langToggle} onPress={toggleLanguage}>
-            <ThemedText type="small" themeColor="title" style={styles.langToggleText}>
-              {language === 'en' ? 'ES' : 'EN'}
-            </ThemedText>
-          </Pressable>
-
           <Text style={[styles.title, { color: theme.title }]}>VAQUERO</Text>
 
           {/* Herd Summary */}
@@ -146,7 +137,10 @@ export default function HomeScreen() {
             <ThemedText style={styles.mapText}>{animal.origin}</ThemedText>
           </ThemedView>
 
-          <Pressable style={[styles.button, { backgroundColor: theme.accent }]}>
+          <Pressable
+            style={[styles.button, { backgroundColor: theme.accent }]}
+            onPress={() => router.push({ pathname: '/animal/[id]/history', params: { id: '1234' } })}
+          >
             <Text style={[styles.buttonText, { color: theme.buttonText }]}>
               {t('viewFullHistory')}
             </Text>

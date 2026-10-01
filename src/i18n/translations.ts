@@ -69,6 +69,14 @@ export const translations = {
     //settings page
     language: 'Language', fontSize: 'Font Size', fontNormal: 'Normal', fontLarge: 'Large', fontXLarge: 'Extra Large',
     highContrast: 'High Contrast', readingAssist: 'Reading Assist', largeButtons: 'Large Buttons',
+    //progress and vaquero
+    vaqueroGreeting: "Hi! I'm VAQUERO, your ranch assistant. Ask me anything about your herd.",
+    askVaquero: 'Ask VAQUERO...',
+    globalEcoScore: 'Global Eco-Score',
+    soilHealth: 'Soil Health',
+    pastureCover: 'Pasture Cover',
+    biodiversity: 'Biodiversity',
+    vaqueroComingSoon: "I'm still learning — real answers are coming soon!",
   },
 
   es: {
@@ -139,6 +147,14 @@ export const translations = {
     //settings page
     language: 'Idioma', fontSize: 'Tamaño de Letra', fontNormal: 'Normal', fontLarge: 'Grande', fontXLarge: 'Muy Grande',
     highContrast: 'Alto Contraste', readingAssist: 'Asistencia de Lectura', largeButtons: 'Botones Grandes',  
+    //progress and vaquero
+    vaqueroGreeting: '¡Hola! Soy VAQUERO, tu asistente de ganadería. Preguntame lo que necesites sobre tu rebaño.',
+    askVaquero: 'Preguntale a VAQUERO...',
+    globalEcoScore: 'Puntuación Eco Global',
+    soilHealth: 'Salud del Suelo',
+    pastureCover: 'Cobertura de Pastura',
+    biodiversity: 'Biodiversidad',
+    vaqueroComingSoon: 'Todavía estoy aprendiendo — ¡las respuestas reales llegan pronto!',
   },
 } as const;
 
