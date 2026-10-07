@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { ThemedView } from '@/components/themed-view';
 import { useTheme } from '@/hooks/use-theme';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { AppText as Text, AppTextInput as TextInput } from '@/components/app-text';
 
 const PREVIOUS_WEIGHT = 382.0; // placeholder — replace with real lookup later
 

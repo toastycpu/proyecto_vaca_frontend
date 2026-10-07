@@ -1,8 +1,9 @@
 import { useState, useRef } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Pressable, StyleSheet } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { AppText as Text} from '@/components/app-text';
 
 export default function CameraScreen() {
   const { mode, animalId } = useLocalSearchParams<{ mode: string; animalId: string }>();

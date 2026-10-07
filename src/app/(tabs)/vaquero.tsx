@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, Pressable, StyleSheet, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
+import { View, Pressable, StyleSheet, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 
@@ -8,6 +8,7 @@ import { useTheme } from '@/hooks/use-theme';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 type Message = { id: string; from: 'user' | 'ai'; text: string };
+import { AppText as Text, AppTextInput as TextInput } from '@/components/app-text';
 
 export default function VaqueroAiScreen() {
   const { t } = useLanguage();

@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 import { ThemedView } from '@/components/themed-view';
 import { useTheme } from '@/hooks/use-theme';
 import { useLanguage } from '@/i18n/LanguageContext';
-
+import { AppText as Text} from '@/components/app-text';
 const criteria = [
   { key: 'soilHealth', progress: 0.8 },
   { key: 'pastureCover', progress: 0.65 },

@@ -15,9 +15,9 @@ type AccessibilityContextType = {
 };
 
 const scaleMultipliers: Record<FontScale, number> = {
-  normal: 1,
-  large: 1.15,
-  xlarge: 1.3,
+  normal: 1.15,
+  large: 1.31,
+  xlarge: 1.5,
 };
 
 const AccessibilityContext = createContext<AccessibilityContextType | undefined>(undefined);

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  TextInput, Pressable, StyleSheet, Text,
+  Pressable, StyleSheet,
   ScrollView, KeyboardAvoidingView, Platform, Alert
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -10,6 +10,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { AppText as Text, AppTextInput as TextInput } from '@/components/app-text';
 
 export default function RegisterScreen() {
   const [email, setEmail] = useState('');

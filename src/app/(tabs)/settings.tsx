@@ -1,4 +1,4 @@
-import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
+import { View, Pressable, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -7,6 +7,7 @@ import { ThemedText } from '@/components/themed-text';
 import { useTheme } from '@/hooks/use-theme';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useAccessibility, FontScale } from '@/context/AccessibilityContext';
+import { AppText as Text} from '@/components/app-text';
 
 export default function SettingsScreen() {
   const { t, language, setLanguage } = useLanguage();

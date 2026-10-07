@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams } from 'expo-router';
 import { ThemedView } from '@/components/themed-view';
 import { useTheme } from '@/hooks/use-theme';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { AppText as Text} from '@/components/app-text';
 
 export default function GenericFormStub() {
   const { id, action } = useLocalSearchParams<{ id: string; action: string }>();

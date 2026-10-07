@@ -2,7 +2,7 @@ import { Platform, StyleSheet, Text, type TextProps } from 'react-native';
 
 import { Fonts, ThemeColor } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
-import { useAccessibility } from '@/context/AccessibilityContext';
+import { useScaledText } from '@/components/app-text';
 
 export type ThemedTextProps = TextProps & {
   type?: 'default' | 'title' | 'small' | 'smallBold' | 'subtitle' | 'link' | 'linkPrimary' | 'code';
@@ -11,27 +11,27 @@ export type ThemedTextProps = TextProps & {
 
 export function ThemedText({ style, type = 'default', themeColor, ...rest }: ThemedTextProps) {
   const theme = useTheme();
-  const { fontScaleMultiplier, readingAssist } = useAccessibility();
 
-  const baseSize = styles[type]?.fontSize ?? styles.default.fontSize;
-  const scaledSize = baseSize * fontScaleMultiplier;
+  const merged = [
+    { color: theme[themeColor ?? 'text'] },
+    type === 'default' && styles.default,
+    type === 'title' && styles.title,
+    type === 'small' && styles.small,
+    type === 'smallBold' && styles.smallBold,
+    type === 'subtitle' && styles.subtitle,
+    type === 'link' && styles.link,
+    type === 'linkPrimary' && styles.linkPrimary,
+    type === 'code' && styles.code,
+    style,
+  ];
+  const scaled = useScaledText(merged, 16);
 
   return (
     <Text
-      style={[
-        { color: theme[themeColor ?? 'text'] },
-        type === 'default' && styles.default,
-        type === 'title' && styles.title,
-        type === 'small' && styles.small,
-        type === 'smallBold' && styles.smallBold,
-        type === 'subtitle' && styles.subtitle,
-        type === 'link' && styles.link,
-        type === 'linkPrimary' && styles.linkPrimary,
-        type === 'code' && styles.code,
-        { fontSize: scaledSize },
-        readingAssist && { lineHeight: scaledSize * 1.6, letterSpacing: 0.5 },
-        style,
-      ]}
+      allowFontScaling={false}
+      adjustsFontSizeToFit={rest.numberOfLines === 1}
+      minimumFontScale={0.5}
+      style={[merged, scaled]}
       {...rest}
     />
   );
